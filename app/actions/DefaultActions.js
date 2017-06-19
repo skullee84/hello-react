@@ -1,7 +1,7 @@
 import {createAction} from 'redux-actions';
 import axios from 'axios';
 
-import * as DefaultActionTypes from 'constant/DefaultActionTypes';
+import * as DefaultActionTypes from 'constants/DefaultActionTypes';
 
 export function fetchData() {
   return dispatch => {

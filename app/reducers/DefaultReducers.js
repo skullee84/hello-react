@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import * as DefaultActionTypes from 'constant/DefaultActionTypes';
+import * as DefaultActionTypes from 'constants/DefaultActionTypes';
 
 export function eventData(state = {}, action = null) {
   switch (action.type) {
