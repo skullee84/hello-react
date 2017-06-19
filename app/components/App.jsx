@@ -1,10 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import _ from 'lodash';
 
-import DefaultActions from 'actions/DefaultActions';
+import * as DefaultActions from 'actions/DefaultActions';
 
 class App extends React.Component {
+
+  componentDidMount() {
+    console.log(DefaultActions);
+  }
 
   _click = () => {
     console.log(this.props);
@@ -22,9 +27,10 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
+  console.log(DefaultActions);
   return {
     dispatch: dispatch,
-    defaultActions: bindActionCreators({DefaultActions}, dispatch)
+    defaultActions: bindActionCreators(_.assign({}, DefaultActions), dispatch)
   }
 };
 

@@ -5,6 +5,12 @@ import * as DefaultActionTypes from 'constants/DefaultActionTypes';
 
 export function fetchData() {
   return dispatch => {
-    axios.get('/api/public/boards');
+    axios.get('/api/boards');
+  }
+}
+
+export function fetchData22() {
+  return dispatch => {
+    axios.get('/api/boards');
   }
 }
