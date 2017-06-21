@@ -7,19 +7,26 @@ import * as DefaultActions from 'actions/DefaultActions';
 
 class App extends React.Component {
 
-  componentDidMount() {
-    console.log(DefaultActions);
-  }
-
   _click = () => {
-    console.log(this.props);
     this.props.defaultActions.fetchData();
   }
 
+  _renderBoards = (boards) => {
+    return boards.map((item, idx) =>
+      <li key={idx}>
+        {item.name}
+      </li>
+    );
+  }
+
   render() {
+    console.log('render!');
     return (
       <div>
         <button onClick={this._click}>Click!</button>
+        <ul>
+          {this._renderBoards(this.props.default.boards)}
+        </ul>
       </div>
     );
   }
@@ -27,7 +34,6 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(DefaultActions);
   return {
     dispatch: dispatch,
     defaultActions: bindActionCreators(_.assign({}, DefaultActions), dispatch)
