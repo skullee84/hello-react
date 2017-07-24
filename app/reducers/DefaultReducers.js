@@ -1,4 +1,3 @@
-import Immutable from 'immutable';
 import * as DefaultActionTypes from 'constants/DefaultActionTypes';
 
 export function boards(state = [], action = null) {
